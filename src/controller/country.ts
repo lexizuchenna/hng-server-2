@@ -149,7 +149,8 @@ export const deleteCountry = async (req: Request, res: Response) => {
 
     await countryRepo.delete({ name });
 
-    res.status(204);
+    res.status(204).end();
+    // .json({ message: `Country ${name}'s data successfully deleted` });
   } catch (error) {
     res.status(500).json({
       error: "Internal server error",
